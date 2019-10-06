@@ -20,22 +20,6 @@ plt.rcParams['legend.frameon'] = True
 %matplotlib inline
 %config InlineBackend.figure_format = 'retina'
 
-
-# Useful Add-ons for Jupyter Notebooks
-# pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
-# pip install ipywidgets && jupyter nbextension enable --py widgetsnbextension
-# pip install jupyterthemes
-# jt -t onedork -fs 9 -tfs 10 -kl -N
-# dark
-# jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -kl -N
-# light
-# jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -kl -N
-
-
-# Useful link
-# https://github.com/dunovank/jupyter-themes
-# https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29
-
 # Hide ALL Codes
 # http://blog.nextgenetics.net/?e=102
 # https://chris-said.io/2016/02/13/how-to-make-polished-jupyter-presentations-with-optional-code-visibility/
@@ -55,3 +39,24 @@ $( document ).ready(code_toggle);
 </script>
 The raw code for this IPython notebook is by default hidden for easier reading.
 To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
+
+# Useful link
+# https://github.com/dunovank/jupyter-themes
+# https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29
+
+# Useful Add-ons for Jupyter Notebooks
+# pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
+# pip install ipywidgets && jupyter nbextension enable --py widgetsnbextension
+# pip install jupyterthemes
+# jt -t onedork -fs 9 -tfs 10 -kl -N
+# dark
+# jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
+# light
+# jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
+
+### Install python kernel in Jupyter Notebook ###
+# pip install ipykernel
+# python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+
+# Remove kernel from jupyter
+# jupyter kernelspec uninstall unwanted-kernel

@@ -14,10 +14,5 @@ curl -X POST -d @filename.json http://localhost:8080/api/v1/load_test | jq .
 
 ### Install new python environment Conda ###
 conda create -n yourenvname python=x.x anaconda
-source activate yourenvname
+conda activate yourenvname
 conda remove -n yourenvname --all
-
-### Install python kernel in Jupyter Notebook ###
-pip install ipykernel
-python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-
