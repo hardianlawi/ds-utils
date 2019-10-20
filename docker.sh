@@ -3,6 +3,7 @@ curl https://get.docker.com | bash
 
 # Build image
 docker build -t <tag name> .
+docker build --build-arg SOME_ENV_VAR=hello -t <tag name> -f Dockerfile .
 
 # Run docker
 # -it attaches to an interactive tty in the container -it <Image name> sh

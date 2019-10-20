@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 
 plt.style.use('seaborn')
+pd.options.display.max_columns = 100
 
 plt.rcParams['figure.figsize'] = [9.0, 6.0]
 plt.rcParams['axes.labelcolor'] = 'white'

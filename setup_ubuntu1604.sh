@@ -15,7 +15,7 @@ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 bash Anaconda3-5.1.0-Linux-x86_64.sh
 
 # Install packages
-sudo apt install gcc htop make
+sudo apt install gcc htop make build-essential
 
 # Install Nvidia Driver
 # http://www.nvidia.com/Download/index.aspx?lang=en-us
