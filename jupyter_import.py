@@ -7,16 +7,9 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 
 plt.style.use('seaborn')
-pd.options.display.max_columns = 100
-
-plt.rcParams['figure.figsize'] = [9.0, 6.0]
-plt.rcParams['axes.labelcolor'] = 'white'
-plt.rcParams['xtick.color'] = 'white'
-plt.rcParams['ytick.color'] = 'white'
-plt.rcParams['text.color'] = 'white'
-plt.rcParams['legend.edgecolor'] = 'black'
-plt.rcParams['legend.facecolor'] = 'black'
 plt.rcParams['legend.frameon'] = True
+
+pd.options.display.max_columns = 100
 
 %matplotlib inline
 %config InlineBackend.figure_format = 'retina'

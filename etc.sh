@@ -1,3 +1,6 @@
+# Wipe all whitespace including newlines
+cat file.txt | tr -d " \t\n\r"
+
 # Get machine IP
 hostname -I | awk '{print $1}'
 
@@ -29,6 +32,7 @@ conda remove -n yourenvname --all
 
 # Export conda environment
 conda env export > environment.yml
+conda env export --no-builds > environment.yml
 
 #####################
 # Jupyter Notebooks #
@@ -44,6 +48,7 @@ pip install jupyterthemes
 jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
 # light
 jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
+jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
 
 ### Install python kernel in Jupyter Notebook ###
 pip install ipykernel
@@ -59,7 +64,7 @@ jupyter kernelspec uninstall unwanted-kernel
 gcloud config set account hardian.l@go-jek.com
 gcloud auth application-default login
 
-# Formatting and mounting persistent disk to VM
+# Formatting and mounting persistent disk to VM (https://cloud.google.com/compute/docs/disks/add-persistent-disk)
 sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/[DEVICE_ID]
 sudo mkdir -p /mnt/disks/[MNT_DIR]
 sudo mount -o discard,defaults /dev/[DEVICE_ID] /mnt/disks/[MNT_DIR]
