@@ -48,13 +48,32 @@ sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kube
 printf "\nexport LC_ALL=C.UTF-8" >> .zshrc
 printf "\nexport LANG=C.UTF-8" >> .zshrc
 
+# For Ubuntu, to automatically run authentication agent
+# if [ -z "$SSH_AUTH_SOCK" ]
+# then
+#    # Check for a currently running instance of the agent
+#    RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+#    if [ "$RUNNING_AGENT" = "0" ]
+#    then
+#         # Launch a new instance of the agent
+#         ssh-agent -s &> .ssh/ssh-agent
+#    fi
+#    eval `cat .ssh/ssh-agent`
+# fi
+
 source .zshrc
 
 # Setup jupyter notebook
 jupyter notebook --generate-config
 
-pip install jupyter_contrib_nbextensions ipywidgets jupyterthemes && 
-	jupyter contrib nbextension install --user && \
-	jupyter nbextension enable --py widgetsnbextension
+pip install jupyter_contrib_nbextensions ipywidgets jupyterthemes ipykernel
 
 jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
+
+jupyter contrib nbextension install --user
+jupyter nbextension enable --py widgetsnbextension
+jupyter nbextension enable highlight_selected_word/main
+jupyter nbextension enable toc2/main
+jupyter nbextension enable codefolding/main
+jupyter nbextension enable collapsible_headings/main
+jupyter nbextension enable execute_time/ExecuteTime

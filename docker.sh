@@ -37,3 +37,9 @@ docker volume rm $(docker volume ls -qf dangling=true)
 
 # Print all the logs
 docker logs -f <CONTAINER ID>
+
+# SSH into a running container
+docker exec -it <CONTAINER ID> bash
+
+# Starting an app
+docker container run --publish 8000:8080 --detach bulletinboard:1.0

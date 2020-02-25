@@ -1,4 +1,8 @@
 %cd ..
+%load_ext nb_black
+
+import warnings
+warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
@@ -6,13 +10,13 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from IPython.display import display
 
+%matplotlib inline
+
 plt.style.use('seaborn')
 plt.rcParams['legend.frameon'] = True
+sns.set_style("whitegrid", {'grid.linestyle': '--'})
 
 pd.options.display.max_columns = 100
-
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
 
 # Hide ALL Codes
 # http://blog.nextgenetics.net/?e=102

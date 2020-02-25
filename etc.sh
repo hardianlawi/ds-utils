@@ -45,9 +45,9 @@ pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install 
 pip install ipywidgets && jupyter nbextension enable --py widgetsnbextension
 pip install jupyterthemes
 # dark
-jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
+# jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
 # light
-jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
+# jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -kl -N
 jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
 
 ### Install python kernel in Jupyter Notebook ###
