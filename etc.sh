@@ -69,3 +69,6 @@ sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/[D
 sudo mkdir -p /mnt/disks/[MNT_DIR]
 sudo mount -o discard,defaults /dev/[DEVICE_ID] /mnt/disks/[MNT_DIR]
 sudo chmod a+w /mnt/disks/[MNT_DIR]
+
+# Print ip address
+hostname --ip-address
