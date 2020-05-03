@@ -4,6 +4,9 @@ cat file.txt | tr -d " \t\n\r"
 # Get machine IP
 hostname -I | awk '{print $1}'
 
+# Store keygen
+ssh-add .ssh/google_compute_engine
+
 # scp
 scp /local/directory username@from_host:file.txt
 

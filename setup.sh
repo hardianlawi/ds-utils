@@ -66,7 +66,11 @@ source .zshrc
 # Setup jupyter notebook
 jupyter notebook --generate-config
 
-pip install jupyter_contrib_nbextensions ipywidgets jupyterthemes ipykernel
+pip install jupyter_contrib_nbextensions 
+pip install jupyter_nbextensions_configurator
+pip install ipywidgets
+pip install jupyterthemes
+pip install ipykernel
 
 jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
 

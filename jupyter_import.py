@@ -6,17 +6,32 @@ warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
+import tensorflow as tf
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 from IPython.display import display
 
 %matplotlib inline
 
-plt.style.use('seaborn')
+plt.rcParams["agg.path.chunksize"] = 10000
 plt.rcParams['legend.frameon'] = True
+plt.style.use('seaborn')
 sns.set_style("whitegrid", {'grid.linestyle': '--'})
 
 pd.options.display.max_columns = 100
+
+
+
+def inspect(df):
+    print('df size:', df.shape)
+    display(df.head())
+    print("\nStatistics")
+    display(df.describe([.05, .25, .5, .75, .95, .99]))
+    print("\nMissing values")
+    display(df.isnull().sum())
+    print(f"Any missing values: {df.isnull().sum().sum() != 0}")
+    display(df.dtypes)
 
 # Hide ALL Codes
 # http://blog.nextgenetics.net/?e=102
