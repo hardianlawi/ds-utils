@@ -1,5 +1,7 @@
 %cd ..
 %load_ext nb_black
+%load_ext autoreload
+%autoreload 2
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -30,7 +32,7 @@ def inspect(df):
     display(df.describe([.05, .25, .5, .75, .95, .99]))
     print("\nMissing values")
     display(df.isnull().sum())
-    print(f"Any missing values: {df.isnull().sum().sum() != 0}")
+    print(f"Any missing values: {df.isnull().any()}")
     display(df.dtypes)
 
 # Hide ALL Codes
