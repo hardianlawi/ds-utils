@@ -58,6 +58,7 @@ pip install ipykernel
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 # Remove kernel from jupyter
+jupyter kernelspec list
 jupyter kernelspec uninstall unwanted-kernel
 
 #########################
@@ -144,6 +145,9 @@ git archive --format zip --output /full/path/to/zipfile.zip master
 git rebase <branch name to be rebased on>
 git rebase --continue
 git rebase --abort
+
+# Cherry pick
+git cherry-pick <SHA_ID>
 
 
 ####################
