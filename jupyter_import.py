@@ -1,6 +1,7 @@
 %cd ..
 %load_ext nb_black
 %load_ext autoreload
+%load_ext google.cloud.bigquery
 %autoreload 2
 
 import warnings
@@ -8,6 +9,7 @@ warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
+import datatable as dt
 import tensorflow as tf
 
 import seaborn as sns
@@ -16,13 +18,14 @@ from IPython.display import display
 
 %matplotlib inline
 
-plt.rcParams["agg.path.chunksize"] = 10000
-plt.rcParams['legend.frameon'] = True
 plt.style.use('seaborn')
+
+plt.rcParams["figure.figsize"] = [20.0, 10.0]
+plt.rcParams["agg.path.chunksize"] = 10000
+plt.rcParams["legend.frameon"] = True
 sns.set_style("whitegrid", {'grid.linestyle': '--'})
 
-pd.options.display.max_columns = 100
-
+pd.options.display.max_columns = 200
 
 
 def inspect(df):
@@ -34,6 +37,10 @@ def inspect(df):
     display(df.isnull().sum())
     print(f"Any missing values: {df.isnull().any()}")
     display(df.dtypes)
+
+
+# Load from BQ
+# %%bigquery sg_reward_log --params {"start_date": '2020-12-02', "end_date": '2020-12-18'}
 
 # Hide ALL Codes
 # http://blog.nextgenetics.net/?e=102
