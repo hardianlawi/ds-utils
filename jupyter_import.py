@@ -4,8 +4,8 @@
 %load_ext google.cloud.bigquery
 %autoreload 2
 
-import warnings
-warnings.filterwarnings("ignore")
+# import warnings
+# warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
