@@ -4,9 +4,7 @@
 %load_ext google.cloud.bigquery
 %autoreload 2
 
-# import warnings
-# warnings.filterwarnings("ignore")
-
+import random as python_random
 import numpy as np
 import pandas as pd
 import datatable as dt
@@ -17,6 +15,10 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 
 %matplotlib inline
+
+np.random.seed(123)
+python_random.seed(123)
+tf.random.set_seed(1234)
 
 plt.style.use('seaborn')
 
