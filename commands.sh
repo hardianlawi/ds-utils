@@ -45,6 +45,15 @@ conda env export --no-builds > environment.yml
 sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
 chsh -s $(which zsh)
 
+# Port forward
+# https://ljvmiranda921.github.io/notebook/2018/01/31/running-a-jupyter-notebook/
+# -N: suppresses the execution of a remote command. Pretty much used in port forwarding.
+# -f: this requests the ssh command to go to background before execution.
+# -L: this argument requires an input in the form of local_socket:remote_socket.
+# Here, we’re specifying our port as YYYY which will be binded to the port XXXX
+# from your remote connection.
+ssh -N -f -L localhost:<your machine port>:localhost:<remote machine port> user@ip_address -i <private key path>
+
 #####################
 # Jupyter Notebooks #
 #####################
