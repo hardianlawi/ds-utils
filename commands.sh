@@ -1,3 +1,7 @@
+# Change all file extensions to lowercase/uppercase
+zmv '(*).(*)' '$1.$2:l'
+zmv '(*).(*)' '$1.$2:u'
+
 # Wipe all whitespace including newlines
 cat file.txt | tr -d " \t\n\r"
 
@@ -28,7 +32,7 @@ curl -X POST -d @filename.json http://localhost:8080/api/v1/load_test | jq .
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 
 ### Install new python environment Conda ###
-conda create -n yourenvname python=x.x anaconda
+conda create -n yourenvname python=x.x conda
 conda env create -f environment.yml
 conda activate yourenvname
 conda remove -n yourenvname --all
@@ -36,6 +40,10 @@ conda remove -n yourenvname --all
 # Export conda environment
 conda env export > environment.yml
 conda env export --no-builds > environment.yml
+
+# Change default shell to zsh
+sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
+chsh -s $(which zsh)
 
 #####################
 # Jupyter Notebooks #
@@ -65,7 +73,7 @@ jupyter kernelspec uninstall unwanted-kernel
 # Google Cloud Platform #
 #########################
 
-gcloud config set account hardian.l@go-jek.com
+gcloud config set account ${EMAIL}
 gcloud auth application-default login
 
 # Formatting and mounting persistent disk to VM (https://cloud.google.com/compute/docs/disks/add-persistent-disk)
