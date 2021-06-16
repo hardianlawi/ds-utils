@@ -54,6 +54,9 @@ chsh -s $(which zsh)
 # from your remote connection.
 ssh -N -f -L localhost:<your machine port>:localhost:<remote machine port> user@ip_address -i <private key path>
 
+# Untar file
+tar -xvzf <FILE_PATH>
+
 #####################
 # Jupyter Notebooks #
 #####################
