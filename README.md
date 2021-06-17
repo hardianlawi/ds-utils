@@ -1,6 +1,6 @@
-# Linux Utils
+# Data Science Utils
 
-## Installation Guide
+## Installation Guides
 
 ### GPU for Deep Learning
 
