@@ -38,9 +38,12 @@ sudo apt-get install -y --no-install-recommends libnvinfer7=7.1.3-1+cuda11.0 \
     libnvinfer-dev=7.1.3-1+cuda11.0 \
     libnvinfer-plugin7=7.1.3-1+cuda11.0
 
-# Install libcusolver
-# This seems to be missing from the TF guide page, but is required for TF to be able to detect the GPU
-sudo apt install -y --no-install-recommends libcusolver-11-3
+echo "" >> $HOME/.zshrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64" >> $HOME/.zshrc
+
+source $HOME/.zshrc
+
+sudo ln $LD_LIBRARY_PATH/libcusolver.so.10 $LD_LIBRARY_PATH/libcusolver.so.11
 ```
 
 Next, if you are using `tensorflow`, you could simply run the command below to check if it is able to detect the GPU.
