@@ -1,4 +1,5 @@
 %cd ..
+%load_ext lab_black
 %load_ext nb_black
 %load_ext autoreload
 %load_ext google.cloud.bigquery
@@ -28,6 +29,7 @@ plt.rcParams["legend.frameon"] = True
 sns.set_style("whitegrid", {'grid.linestyle': '--'})
 
 pd.options.display.max_columns = 200
+pd.options.display.max_colwidth = 200
 
 
 def inspect(df):

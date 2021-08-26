@@ -41,6 +41,9 @@ conda remove -n yourenvname --all
 conda env export > environment.yml
 conda env export --no-builds > environment.yml
 
+# Create new python environment
+conda env create -f environment.yml
+
 # Change default shell to zsh
 sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
 chsh -s $(which zsh)
@@ -210,7 +213,6 @@ docker rmi -f $(docker images -a -q)
 docker system prune -a -f
 docker volume rm $(docker volume ls -qf dangling=true)
 
-
 # Print all the logs
 docker logs -f <CONTAINER ID>
 
@@ -219,3 +221,25 @@ docker exec -it <CONTAINER ID> bash
 
 # Starting an app
 docker container run --publish 8000:8080 --detach bulletinboard:1.0
+
+# Stop application
+docker stop <CONTAINER ID>
+
+# Start multiple containers
+docker compose up -d
+docker compose down # Stop multiple containers
+
+
+##########
+# Golang #
+##########
+
+# Clean dependencies
+go clean -cache -modcache -i -r
+
+# Download latest version of dependencies to $GOPATH
+# This would add/remove dependencies used inside go files to go.mod
+go get ./...
+
+# Download dependencies listed in go.mod
+go mod download
