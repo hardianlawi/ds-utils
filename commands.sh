@@ -77,7 +77,9 @@ pip install jupyterthemes
 jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
 
 ### Install python kernel in Jupyter Notebook ###
-pip install ipykernel
+# pip install ipykernel
+# pip install black
+# pip install nb-black
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 # Remove kernel from jupyter
