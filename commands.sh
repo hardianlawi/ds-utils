@@ -22,7 +22,7 @@ sudo apt-key list | \
  xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
 
 # Kill a list of processes
-sudo kill -9 $(ps aux | grep <process> | awk 'print $2')
+sudo kill -9 $(ps aux | grep <process> | awk '{print $2}')
 
 # Pretty print JSON in Bash
 # Need to install jq by running `apt-get install jq`
@@ -174,6 +174,8 @@ git rebase --abort
 # Cherry pick
 git cherry-pick <SHA_ID>
 
+# Worktree
+git worktree add <DIR> -b <BRANCH_NAME>
 
 ####################
 #      docker      #
