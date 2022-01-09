@@ -40,9 +40,11 @@ conda remove -n yourenvname --all
 # Export conda environment
 conda env export > environment.yml
 conda env export --no-builds > environment.yml
+conda env export --no-builds | grep -v "prefix" > environment.yml
 
 # Create new python environment
 conda env create -f environment.yml
+conda create -n <environment-name> --file req.txt
 
 # Change default shell to zsh
 sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
@@ -221,7 +223,9 @@ docker volume rm $(docker volume ls -qf dangling=true)
 docker logs -f <CONTAINER ID>
 
 # SSH into a running container
-docker exec -it <CONTAINER ID> bash
+docker exec -it <CONTAINER ID> /bin/bash
+# or more generally
+docker exec -it <CONTAINER ID> <command>
 
 # Starting an app
 docker container run --publish 8000:8080 --detach bulletinboard:1.0
