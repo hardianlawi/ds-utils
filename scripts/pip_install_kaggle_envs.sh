@@ -12,15 +12,10 @@ do
    esac
 done
 
-conda create -f -n ${PROJECT_NAME} python=4.8 conda
+conda create -f -n ${PROJECT_NAME} python=3.8 conda
 
 _PYTHON = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/python
 _PIP = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/pip
-
-${_PIP} install seaborn
-${_PIP} install datatable
-${_PIP} install pandas
-${_PIP} install numpy
 
 ${_PIP} install ipython
 ${_PIP} install ipykernel
@@ -38,6 +33,13 @@ else
   ${_PIP} install torch
 fi
 
+${_PIP} install seaborn
+${_PIP} install datatable
+${_PIP} install pandas
+${_PIP} install numpy
+${_PIP} install scikit-learn
+
 ${_PIP} install xgboost
+${_PIP} install pytorch-lightning
 
 ${_PYTHON} -m ipykernel install --user --name ${PROJECT_NAME}
