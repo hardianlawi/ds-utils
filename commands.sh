@@ -31,6 +31,9 @@ curl -X POST -d @filename.json http://localhost:8080/api/v1/load_test | jq .
 # Remove pycache files
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 
+# Remove (base) prefix from terminal
+conda config --set changeps1 False
+
 ### Install new python environment Conda ###
 conda create -n yourenvname python=x.x conda
 conda env create -f environment.yml
@@ -83,6 +86,7 @@ jt -t grade3 -fs 95 -tfs 11 -nfs 115 -cellw 88% -kl -N -T
 # pip install black
 # pip install nb-black
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+poetry run ipython kernel install --user --name myenv --display-name "Python (myenv)"
 
 # Remove kernel from jupyter
 jupyter kernelspec list
