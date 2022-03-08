@@ -1,22 +1,39 @@
 #!/bin/bash
 set -ex
 
-PROJECT_NAME = ""
-GPU = false
+PROJECT_NAME=""
+GPU=false
 
-while getopts "n:g::" opt
-do
-   case "$opt" in
-      n ) PROJECT_NAME = "$OPTARG" ;;
-      g ) GPU = true;;
-      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
-   esac
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -n|--name)
+      PROJECT_NAME="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    -g|--gpu)
+      GPU=YES
+      shift # past argument
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
 done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
 
 conda create -f -n ${PROJECT_NAME} python=3.8
 
-_PYTHON = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/python
-_PIP = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/pip
+_PYTHON=${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/python
+_PIP=${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/pip
 
 ${_PIP} install ipython
 ${_PIP} install ipykernel
@@ -37,6 +54,7 @@ fi
 ${_PIP} install seaborn
 ${_PIP} install datatable
 ${_PIP} install pandas
+${_PIP} install pyarrow
 ${_PIP} install numpy
 ${_PIP} install scikit-learn
 
