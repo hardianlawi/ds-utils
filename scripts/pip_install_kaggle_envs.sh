@@ -30,7 +30,7 @@ done
 
 set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
 
-conda create -f -n ${PROJECT_NAME} python=3.8
+conda create -f -n ${PROJECT_NAME} python=3.8 -y
 
 _PYTHON=${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/python
 _PIP=${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/pip
@@ -40,6 +40,7 @@ ${_PIP} install ipykernel
 ${_PIP} install ipywidgets
 ${_PIP} install jupyter
 
+${_PIP} install pre-commit
 ${_PIP} install nb-black
 ${_PIP} install flake8
 ${_PIP} install mypy
