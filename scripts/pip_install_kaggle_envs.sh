@@ -12,7 +12,7 @@ do
    esac
 done
 
-conda create -f -n ${PROJECT_NAME} python=3.8 conda
+conda create -f -n ${PROJECT_NAME} python=3.8
 
 _PYTHON = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/python
 _PIP = ${CONDA_PREFIX}/envs/${PROJECT_NAME}/bin/pip
@@ -40,6 +40,7 @@ ${_PIP} install numpy
 ${_PIP} install scikit-learn
 
 ${_PIP} install xgboost
+${_PIP} install optuna
 ${_PIP} install pytorch-lightning
 
 ${_PYTHON} -m ipykernel install --user --name ${PROJECT_NAME}
