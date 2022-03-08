@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 PROJECT_NAME = ""
 GPU = false
