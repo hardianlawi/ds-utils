@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 PROJECT_NAME=""
 GPU=false
@@ -14,7 +14,7 @@ while [[ $# -gt 0 ]]; do
       shift # past value
       ;;
     -g|--gpu)
-      GPU=YES
+      GPU=true
       shift # past argument
       ;;
     -*|--*)
