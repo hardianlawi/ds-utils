@@ -58,6 +58,7 @@ ${_PIP} install pandas
 ${_PIP} install pyarrow
 ${_PIP} install numpy
 ${_PIP} install scikit-learn
+${_PIP} install plotly
 
 ${_PIP} install xgboost
 ${_PIP} install optuna
