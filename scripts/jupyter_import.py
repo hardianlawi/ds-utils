@@ -8,13 +8,12 @@
 import os
 import random as python_random
 
+import datatable as dt
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import datatable as dt
-import torch
-
 import seaborn as sns
-import matplotlib.pyplot as plt
+import torch
 from IPython.display import display
 
 %matplotlib inline
@@ -40,8 +39,8 @@ def inspect(df):
     display(df.isnull().sum())
     print(f"Any missing values: {df.isnull().any()}")
     display(df.dtypes)
-    
-    
+
+
 def seed_everything(seed):
     os.environ['PYTHONHASHSEED'] = str(seed)
     python_random.seed(seed)
