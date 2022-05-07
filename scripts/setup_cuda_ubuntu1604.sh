@@ -57,7 +57,7 @@ sudo apt install nvidia-cuda-toolkit
 # Guide: http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
 # https://developer.nvidia.com/rdp/cudnn-download
 #
-# Download: 
+# Download:
 # cuDNN Runtime Library for Ubuntu16.04 (Deb)
 # cuDNN Developer Library for Ubuntu16.04 (Deb)
 # cuDNN Code Samples and User Guide for Ubuntu16.04 (Deb)
