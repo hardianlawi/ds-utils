@@ -58,6 +58,18 @@ class PickleStore(Store):
             pickle.dump(value, f)
 
 
+class JSONStore(Store):
+    def __init__(self, root_dir):
+        super(JSONStore, self).__init__(root_dir)
+
+    def __getitem__(self, key: str):
+        return pd.read_json(join(self._root_dir, key) + ".json")
+
+    def __setitem__(self, key: str, value):
+        with open(join(self._root_dir, key) + ".json", "wb") as f:
+            pickle.dump(value, f)
+
+
 class UniversalStore(CSVStore, FeatherStore, PickleStore):
     def __init__(self, root_dir):
         FeatherStore.__init__(self, root_dir)
@@ -66,6 +78,7 @@ class UniversalStore(CSVStore, FeatherStore, PickleStore):
             ".feather": FeatherStore,
             ".pkl": PickleStore,
             ".tsv": TSVStore,
+            ".json": JSONStore,
         }
 
     def __getitem__(self, key: str):
