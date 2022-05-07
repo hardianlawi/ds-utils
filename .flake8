@@ -10,3 +10,4 @@ exclude =
     .nox,
     .pytest_cache,
     .mypy_cache,
+    ds_utils/common_imports.py,
