@@ -15,7 +15,7 @@ class Store:
 
 class CSVStore(Store):
     def __init__(self, root_dir):
-        super(FeatherStore, self).__init__(root_dir)
+        super(CSVStore, self).__init__(root_dir)
 
     def __getitem__(self, key: str):
         return pd.read_csv(join(self._root_dir, key) + ".csv")
@@ -26,7 +26,7 @@ class CSVStore(Store):
 
 class TSVStore(Store):
     def __init__(self, root_dir):
-        super(FeatherStore, self).__init__(root_dir)
+        super(TSVStore, self).__init__(root_dir)
 
     def __getitem__(self, key: str):
         return pd.read_csv(join(self._root_dir, key) + ".tsv", sep="\t")
