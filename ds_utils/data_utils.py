@@ -95,9 +95,9 @@ class JsonlStore(Store):
                 f.write(json.dumps(line) + "\n")
 
 
-class UniversalStore(FeatherStore, PickleStore):
+class UniversalStore(Store):
     def __init__(self, root_dir):
-        FeatherStore.__init__(self, root_dir)
+        Store.__init__(self, root_dir)
         self._supported_fmts = {
             ".feather": FeatherStore,
             ".csv": CsvStore,
