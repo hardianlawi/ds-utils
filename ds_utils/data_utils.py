@@ -56,7 +56,6 @@ class DocBinStore(PickleStore):
     def __init__(self, root_dir):
         super(DocBinStore, self).__init__(root_dir)
 
-    @profile
     def __getitem__(self, key: str):
         doc_bin_bytes = super().__getitem__(key)
         return DocBin().from_bytes(doc_bin_bytes)
