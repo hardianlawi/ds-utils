@@ -7,5 +7,5 @@ import seaborn as sns
 import torch
 from IPython.display import display
 
-from ds_utils.data_utils import UniversalStore
+from ds_utils.data import UniversalStore
 from ds_utils.random import seed_everything
