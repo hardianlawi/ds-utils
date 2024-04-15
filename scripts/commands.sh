@@ -207,6 +207,11 @@ docker images
 # --rm automatically removes the container when it exits
 docker run
 
+# https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
+docker run -d <image> sleep infinity
+docker run -t -d <image> 
+
+
 # shows all containers that are currently running
 docker ps
 
