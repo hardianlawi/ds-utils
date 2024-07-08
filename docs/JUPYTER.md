@@ -1,6 +1,6 @@
 # Useful Codes on Jupyter
 
-```
+```python
 %cd ..
 %load_ext lab_black
 %load_ext nb_black
