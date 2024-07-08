@@ -7,7 +7,6 @@
 %load_ext google.cloud.bigquery
 %load_ext autoreload
 %autoreload 2
-```
 
 import os
 import random as python_random
@@ -75,9 +74,7 @@ $( document ).ready(code_toggle);
 </script>
 The raw code for this IPython notebook is by default hidden for easier reading.
 To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-```
 
-```python
 plt.style.use('seaborn')
 
 plt.rcParams["figure.figsize"] = [20.0, 10.0]
@@ -88,10 +85,7 @@ sns.set_style("whitegrid", {'grid.linestyle': '--'})
 pd.options.display.max_columns = 200
 pd.options.display.max_rows = 200
 pd.options.display.max_colwidth = 200
-```
 
-
-```
 %load_ext google.cloud.bigquery
 
 # Load from BQ
